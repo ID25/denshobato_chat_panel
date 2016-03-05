@@ -21,7 +21,7 @@ Or install it yourself as:
 ### Install Chat
 
 ```shell
-rails g denshobato:install_chat
+rails g denshobato_chat_panel:install
 ```
 
 This command copies assets to vendor/public/assets
@@ -82,7 +82,7 @@ end
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/denshobato_chat_panel.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ID25/denshobato_chat_panel.
 
 
 ## License
