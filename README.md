@@ -1,4 +1,6 @@
 # DenshobatoChatPanel
+[![Gem Version](https://badge.fury.io/rb/denshobato_chat_panel.svg)](https://badge.fury.io/rb/denshobato_chat_panel)
+[![Build Status](https://travis-ci.org/ID25/denshobato_chat_panel.svg?branch=master)](https://travis-ci.org/ID25/denshobato_chat_panel)
 
 ![alt text](http://i.imgur.com/0sUUfDl.jpg "Screen")
 DenshobatoChatPanel, is a official addon for [Denshobato Gem](https://github.com/ID25/denshobato), it provides simple chat panel for you. If you don't need any special customization for dialog panel, or if you want to try messaging quickly, you can use chat panel.
