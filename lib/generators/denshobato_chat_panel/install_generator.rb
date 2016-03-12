@@ -13,12 +13,18 @@ module DenshobatoChatPanel
 
       def done
         puts "    =====================================================
-                1. Copy this line to your config/initializers/assets.rb
+                1. Add 'denshobato_chat_panel' method to your model
+                  class User < ActiveRecord::Base
+                    denshobato_for :user
+                    denshobato_chat_panel
+                  end
+
+                2. Copy this line to your config/initializers/assets.rb
                   Rails.application.config.assets.precompile += %w( denshobato.js )
 
-                2. Add '@import 'denshobato'; to your application.scss'
+                3. Add '@import 'denshobato'; to your application.scss'
 
-                3. In layouts/application.erb include javascript file to the bottom
+                4. In layouts/application.erb include javascript file to the bottom
                   Like this:
 
                   <body>
@@ -30,10 +36,10 @@ module DenshobatoChatPanel
                     <%= javascript_include_tag 'denshobato' %>
                   </body>
 
-                4. Mount API route in your routes.rb
+                5. Mount API route in your routes.rb
                    mount Denshobato::DenshobatoApi => '/'
 
-                5. Add this helper with arguments to the page with your conversation
+                6. Add this helper with arguments to the page with your conversation
                    e.g  # => conversation/32
 
                    = render_denshobato_messages(@conversation, current_user)

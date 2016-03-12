@@ -2,8 +2,9 @@
 [![Gem Version](https://badge.fury.io/rb/denshobato_chat_panel.svg)](https://badge.fury.io/rb/denshobato_chat_panel)
 [![Build Status](https://travis-ci.org/ID25/denshobato_chat_panel.svg?branch=master)](https://travis-ci.org/ID25/denshobato_chat_panel)
 
-![alt text](http://i.imgur.com/0sUUfDl.jpg "Screen")
 DenshobatoChatPanel, is a official addon for [Denshobato Gem](https://github.com/ID25/denshobato), it provides simple chat panel for you. If you don't need any special customization for dialog panel, or if you want to try messaging quickly, you can use chat panel.
+
+![alt text](http://i.imgur.com/0sUUfDl.jpg "Screen")
 
 ## Installation
 
@@ -31,16 +32,23 @@ rails g denshobato_chat_panel:install
 
 This command copies assets to vendor/public/assets
 
-#####1. Copy this line to your `config/initializers/assets.rb`
+#####1. Add method ```denshobato_chat_panel``` to your model
+```ruby
+class Customer < ActiveRecord::Base
+  denshobato_for :customer
+  denshobato_chat_panel
+end
+```
+#####2. Copy this line to your `config/initializers/assets.rb`
 ```ruby
  Rails.application.config.assets.precompile += %w( denshobato.js )
 ```
-#####2. In your application.scss import css
+#####3. In your application.scss import css
 ```scss
  @import 'denshobato';
 ```
 
-#####3.  In `layouts/application.erb` include javascript file in the bottom
+#####4. In `layouts/application.erb` include javascript file in the bottom
 
 ```erb
 <body>
@@ -52,12 +60,12 @@ This command copies assets to vendor/public/assets
 <%= javascript_include_tag 'denshobato' %>
 </body>
 ```
-#####4. Mount API route in your routes.rb
+#####5. Mount API route in your routes.rb
 ```ruby
  mount Denshobato::DenshobatoApi => '/'
 ```
 
-#####5. On the page with your conversation, e.g  `localhost:3000/conversation/32`, add this helper with arguments
+#####6. On the page with your conversation, e.g  `localhost:3000/conversation/32`, add this helper with arguments
 ```slim
 = render_denshobato_messages(@conversation, current_user)
 // =>  When @conversation = Denshobato::Conversation.find(params[:id])
@@ -72,15 +80,16 @@ By default, name show a class name of model, e.g Customer, or User, and a gravat
 Go to your user model and rewrite these methods.
 
 ```ruby
-class User
+class User < ActiveRecord::Base
   denshobato_for :user
+  denshobato_chat_panel
 
   def full_name
-    "#{self.first_name}, #{self.last_name}"
+    "#{first_name}, #{last_name}"
   end
 
   def image
-    self.avatar.url
+    avatar.url
   end
 end
 ```
@@ -93,3 +102,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ID25/d
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+Copyright (c) 2016 Eugene Domosedov (ID25)
