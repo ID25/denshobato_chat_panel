@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: './lib/react/denshobato.js',
-  output: { path: __dirname + '/app/assets/javascripts/', filename: 'denshobato.js' },
+  output: { path: './lib/generators/denshobato_chat_panel/assets/javascripts/', filename: 'denshobato.js' },
   resolve: { extensions: ['', '.js', '.jsx'] },
   module: {
     loaders: [

@@ -30,10 +30,12 @@ export default class Message extends Component {
 
     return (
       <div className={`chat-message chat-message-${cssClass}`}>
-        <span className='message-author'>{message.full_name}</span>
-        <img className='chat-image chat-image-default' src={message.avatar} />
-        <span className='message-time'>{message.time}</span>
+        <div className='user-info'>
+          <img className='chat-image chat-image-default' src={message.avatar} />
+          <span className='message-author'>{message.full_name}</span>
+        </div>
         <div className='chat-message-wrapper'>
+          <span className='message-time'>{message.time}</span>
           <div className='chat-message-content'>
             <p>{message.body}</p>
           </div>

@@ -188,27 +188,29 @@ $color-blue: #8ac0d9;
       }
     }
     &.chat-message-recipient {
-      .message-time {
-        font-size: xx-small;
-        display: block;
-        margin: 0 auto;
-        position: absolute;
-        margin-top: -3px;
-        left: 96px;
-      }
-      .message-author {
-        font-size: small;
-        position: absolute;
-        top: 76px;
-        left: 17px;
+      .user-info {
+        display: inline-block;
+        float: left;
+        width: 60px;
+        height: auto;
+        .message-author {
+          font-size: small;
+          display: block;
+          text-align: center;
+        }
       }
       .chat-message-wrapper,
       .chat-message-content {
         float: left;
       }
       .chat-message-wrapper {
+        .message-time {
+          font-size: xx-small;
+          display: block;
+        }
         &:before {
-          left: -$spacing;
+          left: -20px;
+          top: 30px;
           border-right-color: $color-green;
         }
       }
@@ -218,27 +220,31 @@ $color-blue: #8ac0d9;
       }
     }
     &.chat-message-sender {
-      .message-time {
-        font-size: xx-small;
-        display: block;
-        margin: 0 auto;
-        position: absolute;
-        margin-top: -3px;
-        right: 96px;
-      }
-      .message-author {
-        font-size: small;
-        position: absolute;
-        top: 77px;
-        right: 10px;
+      .user-info {
+        display: inline-block;
+        float: right;
+        width: 60px;
+        height: auto;
+        .message-author {
+          font-size: small;
+          display: block;
+          text-align: center;
+          margin: 0px 0px 0px 0px;
+        }
       }
       .chat-message-wrapper,
       .chat-message-content {
         float: right;
       }
       .chat-message-wrapper {
+        .message-time {
+          font-size: xx-small;
+          display: block;
+          text-align: right;
+        }
         &:before {
           right: -$spacing;
+          top: 30px;
           border-left-color: $color-blue;
         }
       }

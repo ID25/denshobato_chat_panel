@@ -4,7 +4,7 @@
 
 DenshobatoChatPanel, is a official addon for [Denshobato Gem](https://github.com/ID25/denshobato), it provides simple chat panel for you. If you don't need any special customization for dialog panel, or if you want to try messaging quickly, you can use chat panel.
 
-![alt text](http://i.imgur.com/0sUUfDl.jpg "Screen")
+![Denshobato Chat Panel](http://i.imgur.com/38cyDTi.png "Denshobato Chat Panel")
 
 ## Installation
 
